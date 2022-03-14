@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotações da bolsa</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="papel">Insira o ativo</label>
+        <input type="text" id="papel" placeholder="Exemplo: bidi4" required autofocus> 
+        <input type="button" value="cotação" onclick="fazerCotacao()">
+        <input type="button" value="limpar" onclick="clearAll()"><br><br>
+        <input type="text" id="nome" placeholder="nome" readonly><br>
+        <input type="text" id="cotacao" placeholder="cotacao" readonly><br>
+        <input type="text" id="variacao" placeholder="variacao" readonly><br>
+        <input type="text" id="lastUpdate" placeholder="lastUpdate" readonly><br>
+    </form>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
