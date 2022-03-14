@@ -4,20 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Cotações da bolsa</title>
 </head>
 <body>
 
-    <form action="">
-        <label for="papel">Insira o ativo</label>
-        <input type="text" id="papel" placeholder="Exemplo: bidi4" required autofocus> 
-        <input type="button" value="cotação" onclick="fazerCotacao()">
-        <input type="button" value="limpar" onclick="clearAll()"><br><br>
-        <input type="text" id="nome" placeholder="nome" readonly><br>
-        <input type="text" id="cotacao" placeholder="cotacao" readonly><br>
-        <input type="text" id="variacao" placeholder="variacao" readonly><br>
-        <input type="text" id="lastUpdate" placeholder="lastUpdate" readonly><br>
+    <form>
+        <h2>Insira um ativo</h2>
+        <h4>(Listado no IBOVESPA)</h4>
+
+        <div class="row">
+            <input type="text" id="papel" placeholder="Exemplo: bidi4" required autofocus> 
+        </div>
+        <div class="buttons">
+            <input type="button" class="btn send" value="cotação" onclick="fazerCotacao()">
+            <input type="button" class="btn clear" value="limpar" onclick="clearAll()">
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="nome">Nome do ativo</label>
+                <input type="text" id="nome" readonly>
+            </div>
+            <div class="col">
+                <label for="cotacao">Cotação</label>
+                <input type="text" id="cotacao" readonly>
+            </div>
+        </div>
+     
+        <div class="row">
+            <div class="col">
+                <label for="variacao">Variação %</label>
+                <input type="text" id="variacao" readonly>
+            </div>
+            <div class="col">
+                <label for="lastUpdate">Última atualização</label>
+                <input type="text" id="lastUpdate" readonly>
+            </div>
+        </div>
+        
     </form>
+
+    <footer>
+        Programado por Matheus Ferreira - 2022
+    </footer>
     
 
     <script src="script.js"></script>
