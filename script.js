@@ -27,7 +27,7 @@ async function fazerCotacao() {
         let dadosRaw = bruto.results
         let dados = Object.values(dadosRaw)
         dados = dados[0]
-        
+       // console.log(dados)
         if (dados.hasOwnProperty('error')) {
             alert('Ativo não encontrado')
         } else {
