@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="script.js" defer></script>
     <title>Cotações da bolsa</title>
 </head>
 <body>
@@ -17,43 +19,41 @@
             <input type="text" id="papel" placeholder="Exemplo: bidi4" required autofocus> 
         </div>
         <div class="buttons">
-            <input type="button" class="btn send" value="cotação" onclick="fazerCotacao()">
-            <input type="button" class="btn clear" value="limpar" onclick="clearAll()">
+            <input type="button" class="btn send" value="cotação" id="btnCotacao">
+            <input type="button" class="btn clear" value="limpar" id="btnClear">
         </div>
         <div class="row">
             <div class="col">
                 <label for="nome">Nome do ativo</label>
-                <input type="text" id="nome" readonly>
+                <input type="text" id="nome" disabled>
             </div>
             <div class="col">
                 <label for="cotacao">Cotação</label>
-                <input type="text" id="cotacao" readonly>
+                <input type="text" id="cotacao" disabled>
             </div>
         </div>
      
         <div class="row">
             <div class="col">
                 <label for="variacao">Variação %</label>
-                <input type="text" id="variacao" readonly>
+                <input type="text" id="variacao" disabled>
             </div>
             <div class="col">
                 <label for="lastUpdate">Última atualização</label>
-                <input type="text" id="lastUpdate" readonly>
+                <input type="text" id="lastUpdate" disabled>
             </div>
         </div>
-        
     </form>
+
+    <div id="chart">
+
+    </div>
 
     <section>
         Disclaimer: os dados podem apresentar delay na sua cotação. Não garanto a precisão dos dados fornecidos nesta página, uma vez que devem ser utilizados apenas para efeitos informativos.
-     
     </section>
-
-    <footer>
-        Programado por Matheus Ferreira - 2022
-    </footer>
     
 
-    <script src="script.js"></script>
+   
 </body>
 </html>

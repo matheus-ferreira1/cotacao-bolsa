@@ -1,3 +1,9 @@
+let btnCotacao = document.querySelector('#btnCotacao') 
+let btnClear = document.querySelector('#btnClear')
+
+btnCotacao.addEventListener('click', fazerCotacao)
+btnClear.addEventListener('click', clearAll)
+
 function fillForm(dados) {
     if (dados.change_percent < 0) {
         document.getElementById('variacao').className = 'goRed';
@@ -7,7 +13,7 @@ function fillForm(dados) {
         document.getElementById('cotacao').className = 'goGreen'
     }
     document.getElementById('nome').value = dados.name;
-    document.getElementById('cotacao').value = ` R$ ${dados.price}`;
+    document.getElementById('cotacao').value = `R$ ${dados.price}`;
     document.getElementById('variacao').value = `${dados.change_percent}%`;
     document.getElementById('lastUpdate').value = dados.updated_at
 }
@@ -27,7 +33,7 @@ async function fazerCotacao() {
         let dadosRaw = bruto.results
         let dados = Object.values(dadosRaw)
         dados = dados[0]
-       // console.log(dados)
+        // console.log(dados)
         if (dados.hasOwnProperty('error')) {
             alert('Ativo não encontrado')
         } else {
@@ -36,6 +42,7 @@ async function fazerCotacao() {
     }
 }
 
+
 function clearAll() {
     document.getElementById('papel').value = '';
     document.getElementById('nome').value = '';
@@ -43,3 +50,20 @@ function clearAll() {
     document.getElementById('variacao').value = '';
     document.getElementById('lastUpdate').value = '';
 }
+
+var options = {
+    chart: {
+      type: 'line'
+    },
+    series: [{
+      name: 'sales',
+      data: [30,40,35,50,49,60,70,91,125]
+    }],
+    xaxis: {
+      categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+    }
+  }
+  
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  
+  chart.render();
