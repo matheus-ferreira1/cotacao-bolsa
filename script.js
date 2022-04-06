@@ -1,8 +1,39 @@
 let btnCotacao = document.querySelector('#btnCotacao') 
 let btnClear = document.querySelector('#btnClear')
+let ibov = document.querySelector('.ibov')
+let ifix = document.querySelector('.ifix')
+let btc = document.querySelector('.btc')
+
 
 btnCotacao.addEventListener('click', fazerCotacao)
 btnClear.addEventListener('click', clearAll)
+
+function pageFirstRender() {
+    const url1 = `https://api.hgbrasil.com/finance/?format=json-cors&key=9211c9ea`
+    let request = new XMLHttpRequest()
+        request.open("GET", url1, false)
+        request.send()
+    let bruto =  JSON.parse(request.responseText)
+    let rawData = bruto.results
+    
+    console.log(rawData)
+
+    ibov.innerHTML = `
+        <h5>IBOV</h5>
+        <h5>R$ ${rawData.stocks.IBOVESPA.points.toFixed(2)}</h5>
+        <h5>${rawData.stocks.IBOVESPA.variation.toFixed(2)}%</h5>
+    `
+    ifix.innerHTML = `
+        <h5>IFIX</h5>
+        <h5>R$ ${rawData.stocks.IFIX.points.toFixed(2)}</h5>
+        <h5>${rawData.stocks.IFIX.variation.toFixed(2)}%</h5>
+    `
+    btc.innerHTML = `
+        <h5>Bitcoin</h5>
+        <h5>R$ ${rawData.bitcoin.mercadobitcoin.last.toFixed(2)}</h5>
+        <h5>${rawData.bitcoin.mercadobitcoin.variation.toFixed(2)}%</h5>
+    `
+}
 
 function fillForm(dados) {
     if (dados.change_percent < 0) {
@@ -51,19 +82,19 @@ function clearAll() {
     document.getElementById('lastUpdate').value = '';
 }
 
-var options = {
-    chart: {
-      type: 'line'
-    },
-    series: [{
-      name: 'sales',
-      data: [30,40,35,50,49,60,70,91,125]
-    }],
-    xaxis: {
-      categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
-    }
-  }
+// var options = {
+//     chart: {
+//       type: 'line'
+//     },
+//     series: [{
+//       name: 'sales',
+//       data: [30,40,35,50,49,60,70,91,125]
+//     }],
+//     xaxis: {
+//       categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+//     }
+//   }
   
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
+//   var chart = new ApexCharts(document.querySelector("#chart"), options);
   
-  chart.render();
+//   chart.render();

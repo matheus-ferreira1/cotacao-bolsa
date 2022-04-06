@@ -9,7 +9,23 @@
     <script src="script.js" defer></script>
     <title>Cotações da bolsa</title>
 </head>
-<body>
+<body onload="pageFirstRender()">
+    <div id="quotation">
+        <div class="quote-wrapper">
+
+            <div class="quotes ibov">
+                ibov
+            </div>
+            <div class="quotes ifix">
+                ifix
+            </div>
+            <div class="quotes btc">
+                btc
+            </div>
+
+
+        </div>
+    </div>
 
     <form>
         <h2>Insira um ativo</h2>
@@ -45,9 +61,7 @@
         </div>
     </form>
 
-    <div id="chart">
-
-    </div>
+    <!-- <div id="chart"></div> -->
 
     <section>
         Disclaimer: os dados podem apresentar delay na sua cotação. Não garanto a precisão dos dados fornecidos nesta página, uma vez que devem ser utilizados apenas para efeitos informativos.
