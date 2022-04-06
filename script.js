@@ -21,29 +21,29 @@ function pageFirstRender() {
     console.log(rawData)
 
     ibov.innerHTML = `
-        <h5>IBOV</h5>
+        <h4>IBOV</h4>
         <h5>R$ ${rawData.stocks.IBOVESPA.points.toFixed(2)}</h5>
         <h5>${rawData.stocks.IBOVESPA.variation.toFixed(2)}%</h5>
     `
     ifix.innerHTML = `
-        <h5>IFIX</h5>
+        <h4>IFIX</h4>
         <h5>R$ ${rawData.stocks.IFIX.points.toFixed(2)}</h5>
         <h5>${rawData.stocks.IFIX.variation.toFixed(2)}%</h5>
     `
     btc.innerHTML = `
-        <h5>Bitcoin</h5>
+        <h4>Bitcoin</h4>
         <h5>R$ ${rawData.bitcoin.mercadobitcoin.last.toFixed(2)}</h5>
         <h5>${rawData.bitcoin.mercadobitcoin.variation.toFixed(2)}%</h5>
     `
     dowjones.innerHTML = `
-        <h5>Dow Jones</h5>
+        <h4>Dow Jones</h4>
         <h5>$ ${rawData.stocks.DOWJONES.points.toFixed(2)}</h5>
         <h5>${rawData.stocks.DOWJONES.variation.toFixed(2)}%</h5>
     `
     nasdaq.innerHTML = `
-        <h5>Nasdaq</h5>
-        <h5>$ ${rawData.stocks.NASDAQ.points.toFixed(2)}</h5>
-        <h5>${rawData.stocks.NASDAQ.variation.toFixed(2)}%</h5>
+        <h4>Nasdaq</h4>
+        <h5 class="nasdaqColor">$ ${rawData.stocks.NASDAQ.points.toFixed(2)}</h5>
+        <h5 class="nasdaqColor">${rawData.stocks.NASDAQ.variation.toFixed(2)}%</h5>
     `
 }
 
