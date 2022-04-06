@@ -3,6 +3,8 @@ let btnClear = document.querySelector('#btnClear')
 let ibov = document.querySelector('.ibov')
 let ifix = document.querySelector('.ifix')
 let btc = document.querySelector('.btc')
+let dowjones = document.querySelector('.dowjones')
+let nasdaq = document.querySelector('.nasdaq')
 
 
 btnCotacao.addEventListener('click', fazerCotacao)
@@ -32,6 +34,16 @@ function pageFirstRender() {
         <h5>Bitcoin</h5>
         <h5>R$ ${rawData.bitcoin.mercadobitcoin.last.toFixed(2)}</h5>
         <h5>${rawData.bitcoin.mercadobitcoin.variation.toFixed(2)}%</h5>
+    `
+    dowjones.innerHTML = `
+        <h5>Dow Jones</h5>
+        <h5>$ ${rawData.stocks.DOWJONES.points.toFixed(2)}</h5>
+        <h5>${rawData.stocks.DOWJONES.variation.toFixed(2)}%</h5>
+    `
+    nasdaq.innerHTML = `
+        <h5>Nasdaq</h5>
+        <h5>$ ${rawData.stocks.NASDAQ.points.toFixed(2)}</h5>
+        <h5>${rawData.stocks.NASDAQ.variation.toFixed(2)}%</h5>
     `
 }
 
